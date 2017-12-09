@@ -1,0 +1,46 @@
+<style>
+#ppBody
+{
+    font-size:11pt;
+    width:100%;
+    margin:0 auto;
+    text-align:justify;
+}
+
+#ppHeader
+{
+    font-family:verdana;
+    font-size:21pt;
+    width:100%;
+    margin:0 auto;
+}
+
+.ppConsistencies
+{
+    display:none;
+}
+</style>
+<button (click)="back()">Back</button>
+<div id='ppHeader'>Security Privacy Policy</div>
+<br>
+<a *ngFor='let security of security'>
+    <h2>Security Policy:</h2>
+    <div>
+          {{security.secur}}
+    </div>
+    <br>
+    <h2>DMCA Policy:</h2>
+    <div>
+          {{security.dmca}}
+    </div>
+</a>
+
+<br>
+
+<br><span id='ourCon'></span><br><div class='blueText'><strong>Contacting Us</strong></div>
+<br><div class='innerText'>If there are any questions regarding this privacy policy, you may contact us using
+                      the information below.<br><br></div>
+                      <div class='innerText'>NASA Search Gallery</div>
+<div class='innerText'>Canada</div><div class='innerText'>ablack65@uwo.ca</div>
+<div class='innerText'>403-771-4066</div><div class='innerText'><br>Last Edited on 2017-12-03</div>
+                                        

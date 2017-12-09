@@ -1,0 +1,30 @@
+<nav>
+    <button routerLink="/homepage">Home Page</button>
+    <button routerLink="/collections"> My Collections</button>
+    <button (click)="logOut()">Log Out</button>
+  </nav>
+  
+  <div>
+    <h3>Create a New Collection</h3>
+     <div>
+       <dl>
+         <label>
+          Name:
+          <input placeholder="Collection" #name>
+        </label>
+       </dl>
+       <dl>
+         <label>
+          Public:
+          <input type="checkbox" #isPublic>
+        </label>
+       </dl>
+       <dl>
+         <label>
+           Decription:
+          <textarea rows="7" columns="10" placeholder="Description" #descrip></textarea>
+        </label>
+       </dl>
+       <button (click)="submitNew(name.value, isPublic.checked, descrip.value)">Submit</button>
+     </div>
+  </div>

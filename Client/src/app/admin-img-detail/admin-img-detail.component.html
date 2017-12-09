@@ -1,0 +1,44 @@
+
+<button routerLink="/collections/admin">Back</button>
+
+<div *ngIf='thisfolder && log'>
+    <h3>{{ thisfolder.owner | uppercase }}'s Collection</h3>
+     <dl>
+       <span><b>Date Filed:</b> </span>{{ log.date }} |
+       <span><b>Filed By: </b></span> {{ log.reportedBy }} 
+     </dl>
+     <span><b>Reasoning:</b> {{ log.reason }}</span>
+     <div>
+       <label><b>Name:</b> {{ thisfolder.name }}</label>
+       <dl>
+         Status: <div *ngIf='thisfolder.dispute'> <b>Disputed</b></div>
+       </dl>
+       <button (click)="resolveDispute(thisfolder._id)">Resolve</button> 
+     </div>
+  </div>
+
+<br><br><h2>Sample Email To Send:</h2>
+<div *ngIf='thisfolder && log'>
+    <div>
+      <strong>Hello {{thisfolder.owner}},</strong><br>
+      NASA Image Search is reaching out to you because of a recent dispute claim that was opened up<br>
+      against your collection: {{thisfolder.name}}. The reasoning behind this dispute is : <br>
+      <ol>
+        {{log.reason}}
+      </ol><br>
+      Please follow up with us at ablack65@uwo.ca immediately in order to resolve this claim.<br>
+      Regards,<br>
+      NASA Image Search Team<br><br>
+      <button>Send to User</button>
+    </div>
+  </div>
+  
+  <div *ngIf='images' align="center">
+      <dl *ngFor="let image of images">
+        <span>
+            <a href="{{image}}">
+                <img id="myImg" src="{{image}}" >
+            </a>
+        </span>
+      </dl>
+</div>
