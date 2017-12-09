@@ -1,0 +1,33 @@
+<nav>
+  <button routerLink="/homepage">Home Page</button>
+  <button routerLink="/collections"> My Collections</button>
+  <button (click)="logOut()">Log Out</button>
+</nav>
+
+<div *ngIf='thisfolder'>
+  <h3>{{ thisfolder.owner | uppercase }}'s Collection</h3>
+   <dl>
+     <span>Rating: </span>{{ thisfolder.rating }} 
+     <button (click)="rate(thisfolder._id)">+</button>
+   </dl>
+   <dl>
+      <span>Report Reason:
+          <input #reason>
+       </span>
+       <button (click)="reportImgFolder(thisfolder._id, reason.value)">Report</button> 
+   </dl>
+   <div>
+     <label>Name:{{ thisfolder.name }}</label>
+     <dl>{{thisfolder.descrip}}</dl>
+   </div>
+</div>
+
+<div *ngIf='images' align="center">
+    <dl *ngFor="let image of images">
+      <span>
+          <a href="{{image}}">
+              <img id="myImg" src="{{image}}" >
+          </a>
+      </span>
+    </dl>
+  </div>

@@ -1,0 +1,12 @@
+{{title}}
+
+<div class="login">
+    <form>
+        <dl><b>New Username: </b><input name= 'input' type="email" #email required></dl>
+        <dl><b>Password: </b><input type="password" #password required></dl>
+    </form>
+    <dl>
+        <button (click)="signUp(email.value, password.value)" >Sign Up</button>
+        <button routerLink="/login"> Back</button>
+    </dl>
+</div>

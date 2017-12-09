@@ -1,0 +1,19 @@
+
+<div >
+  <span>
+    <h4 *ngIf=imgfolders>Your Collections</h4> 
+  </span>
+
+  <div class="grid grid-pad">
+      <a *ngFor="let imgfolder of imgfolders | orderBy: 'rating': true" class="col-1-5"
+        (click)="imgFolderDetail(imgfolder._id)" align="center">
+        <div class="module imgfolder">
+          <h5>{{imgfolder.name}} | {{imgfolder.rating}}</h5>
+        </div>
+      </a>
+  </div>
+</div>
+<div>
+  <button routerLink="/collections/edit"> Edit Collections</button>
+  <button routerLink="/collections/new">New Collection</button>
+</div>

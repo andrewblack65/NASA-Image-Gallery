@@ -1,0 +1,13 @@
+{{title}}
+<div>
+    <h2>About:</h2>
+        This is a user based image collection site, users create and manage their own image collections and display
+        them to the other users of the site. Follow the login button to enter the site or sign up.
+</div>
+<div class="login">
+    <dl><b>Username: </b><input type="email" #email></dl>
+    <dl><b>Password: </b><input type="password" #password></dl>
+    <dl><button (click)="login(email.value, password.value)" >Log In</button></dl>
+</div>
+<button (click)="signUp()">Sign Up</button>
+<app-dashboard></app-dashboard>

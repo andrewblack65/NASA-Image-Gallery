@@ -1,0 +1,25 @@
+<nav>
+    <button routerLink="/homepage">Home Page</button>
+    <button routerLink="/collections"> My Collections</button>
+    <button (click)="logOut()">Log Out</button>
+</nav>
+<p>
+  <b>Search the Nasa Image Database:</b>
+  <label>
+    <div class="wrapper">
+        <input placeholder="ex. Moon" #searchTerm>
+        <button (click)="imgSearch(searchTerm.value)">Search</button>
+    </div>
+  </label>
+</p>
+
+<div id="container" style="overflow-y:scroll; height:600px;">
+      <div *ngIf='imagesArray' align="center">
+          <dl *ngFor="let image of imagesArray">
+            <span>
+                <img src="{{image.href}}">
+                <button (click)="addImage(image.href)">Add</button>
+            </span>
+          </dl>
+        </div>
+</div>
